@@ -212,7 +212,18 @@ def main(): # pragma: no cover
     # Get arguments
     args = get_arguments()
     # Votre programme ici
+    chunk_size = 50
+    kmer_size = 8
 
+    otu_list = abundance_greedy_clustering(
+        amplicon_file=args.amplicon_file,
+        minseqlen=args.minseqlen,
+        mincount=args.mincount,
+        chunk_size=chunk_size,
+        kmer_size=kmer_size,
+    )
+
+    write_OTU(otu_list, args.output_file)
 
 
 if __name__ == '__main__':
