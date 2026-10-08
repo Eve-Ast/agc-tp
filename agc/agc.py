@@ -212,7 +212,7 @@ def main(): # pragma: no cover
     # Get arguments
     args = get_arguments()
     # Votre programme ici
-    chunk_size = 50
+    chunk_size = 100
     kmer_size = 8
 
     otu_list = abundance_greedy_clustering(
